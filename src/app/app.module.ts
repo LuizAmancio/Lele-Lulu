@@ -6,6 +6,8 @@ import { CounterComponent } from './components/counter/counter.component';
 
 // Swiper Angular
 import { register } from 'swiper/element/bundle';
+import { CoracaoComponent } from './coracao/coracao.component';
+import { TextCarouselComponent } from './text-carousel/text-carousel.component';
 
 register(); // registra web components do Swiper (modo element)
 
@@ -13,7 +15,9 @@ register(); // registra web components do Swiper (modo element)
   declarations: [
     AppComponent,
     CarouselComponent,
-    CounterComponent
+    CounterComponent,
+    CoracaoComponent,
+    TextCarouselComponent
   ],
   imports: [ BrowserModule ],
   providers: [],

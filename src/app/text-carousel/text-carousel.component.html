@@ -1,0 +1,14 @@
+<swiper-container
+  pagination="true"
+  navigation="false"
+  space-between="16"
+  slides-per-view="1"
+  loop="false"
+  style="--swiper-pagination-color:#ff3b3b; --swiper-pagination-bullet-inactive-color:rgba(255,255,255,.4)"
+>
+  <swiper-slide *ngFor="let text of heroTexts">
+    <div class="hero-slide-text">
+      {{ text }}
+    </div>
+  </swiper-slide>
+</swiper-container>

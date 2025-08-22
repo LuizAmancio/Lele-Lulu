@@ -1,16 +1,35 @@
-<!-- Carrossel -->
-<section>
+<app-coracao></app-coracao>
+
+<div *ngIf="!showContent" class="intro-screen">
+  <h2>Lulu <span class="accent">&</span> Lele</h2>
+  <p>Estamos juntos de verdade desde junho do ano passado, e cada momento ao seu lado tem sido simplesmente incrível, impossível negar.</p>
+  <p>Mas o dia em que oficializei nosso pedido foi ainda mais especial, um marco no nosso amor. Por isso, escolhi algumas fotos em ordem cronológica para revivermos cada pedacinho da nossa história até chegar àquele dia inesquecível.</p>
+  <p>Prepare-se para ver algo especial ☺️</p>
+  <button (click)="showContent = true">Entrar</button>
+</div>
+
+<div *ngIf="showContent">
+  <audio autoplay loop>
+    <source src="assets/musica/Turning Page (Instrumental).mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="back">
+    <span (click)="showContent = false">↩︎</span>
+  </div>
+
+  <!-- Carrossel -->
+<section style="margin-top: -2rem;">
   <div class="container">
     <app-carousel></app-carousel>
   </div>
 </section>
 
 <!-- Nomes e texto -->
-<section class="hero">
+<section class="hero" style="margin-top: -3rem;">
   <div class="container">
     <div class="names">Lulu <span class="accent">&</span> Lele</div>
     <p class="tagline">Cada foto conta uma história. Cada dia, um novo capítulo. 💘</p>
-    <p class="subtitle">Texto teste: nosso amor começou em 24/08/2024 e desde então tudo ficou mais leve, divertido e especial.</p>
+    <app-text-carousel></app-text-carousel>
   </div>
 </section>
 
@@ -22,3 +41,5 @@
     <app-counter></app-counter>
   </div>
 </section>
+</div>
+

@@ -1,1 +1,43 @@
 :host { display:block; }
+
+.intro-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+}
+.intro-screen button {
+  margin-top: 24px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background: #ff3b3b;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.intro-screen p {
+  color: #e0e0e0;     
+  font-weight: 600;   
+  font-size: 1.08rem;  
+  line-height: 1.6;    
+  margin-bottom: 12px; 
+  text-align: justify;
+  padding: 1rem;
+}
+
+.back{
+    margin-left: 1rem;
+    margin-top: .5rem;
+}
+.back span{
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 18px;
+}
+.back span:hover{
+    color: #ff3b3b;
+}
