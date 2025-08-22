@@ -6,8 +6,8 @@ import { CounterComponent } from './components/counter/counter.component';
 
 // Swiper Angular
 import { register } from 'swiper/element/bundle';
-import { CoracaoComponent } from './coracao/coracao.component';
-import { TextCarouselComponent } from './text-carousel/text-carousel.component';
+import { CoracaoComponent } from './components/coracao/coracao.component';
+import { TextCarouselComponent } from './components/text-carousel/text-carousel.component';
 
 register(); // registra web components do Swiper (modo element)
 

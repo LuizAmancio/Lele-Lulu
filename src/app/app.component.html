@@ -18,28 +18,62 @@
   </div>
 
   <!-- Carrossel -->
-<section style="margin-top: -2rem;">
-  <div class="container">
-    <app-carousel></app-carousel>
-  </div>
-</section>
+  <section style="margin-top: -2rem;">
+    <div class="container">
+      <app-carousel></app-carousel>
+    </div>
+  </section>
 
-<!-- Nomes e texto -->
-<section class="hero" style="margin-top: -3rem;">
-  <div class="container">
-    <div class="names">Lulu <span class="accent">&</span> Lele</div>
-    <p class="tagline">Cada foto conta uma história. Cada dia, um novo capítulo. 💘</p>
-    <app-text-carousel></app-text-carousel>
-  </div>
-</section>
+  <!-- Nomes e texto -->
+  <section class="hero" style="margin-top: -3rem;">
+    <div class="container">
+      <div class="names">Lulu <span class="accent">&</span> Lele</div>
+      <p class="tagline">Cada foto conta uma história. Cada dia, um novo capítulo. 💘</p>
+      <app-text-carousel></app-text-carousel>
+    </div>
+  </section>
 
-<div class="spacer"></div>
+  <!-- Contador -->
+  <section>
+    <div class="container">
+      <app-counter></app-counter>
+    </div>
+  </section>
 
-<!-- Contador -->
-<section>
-  <div class="container">
-    <app-counter></app-counter>
+  <div class="presente">
+    <button class="gift-btn" (click)="abrirCarta()">
+        🎁 Quer presente? Clique aqui
+    </button>
+
+    <!-- Modal envelope -->
+    <div class="carta-overlay" *ngIf="mostrarCarta">
+      <div class="envelope"  [ngClass]="{'fechando': animandoFechar}">
+        <div class="envelope-flap"></div>
+        <div class="envelope-body">
+          <div class="carta-conteudo">
+            <h2>Caça ao presente 🕵️‍♀️</h2>
+            <!-- Swiper carousel -->
+            <swiper-container
+              #swiper
+              pagination="true"
+              navigation="false"
+              space-between="30"
+              slides-per-view="1"
+              loop="false"
+              style="--swiper-pagination-color:#1652d1; --swiper-pagination-bullet-inactive-color:#7e7f81"
+            >
+              <swiper-slide *ngFor="let text of textos">
+                <p>
+                  {{ text }}
+                </p>
+              </swiper-slide>
+            </swiper-container>
+            <button class="fechar" (click)="fecharCarta()">Fechar</button>
+             <button *ngIf="!mostrarDicas" class="dicas" (click)="abrirDicas()">Dicas</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 </div>
 
