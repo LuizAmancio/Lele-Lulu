@@ -1,0 +1,14 @@
+<!-- Swiper (usando Web Components do Swiper, compatível com Angular 15) -->
+<swiper-container
+  pagination="true"
+  space-between="16"
+  slides-per-view="1"
+  loop="true"
+  style="--swiper-pagination-color:#ff3b3b; --swiper-pagination-bullet-inactive-color:rgba(255,255,255,.4)"
+>
+  <swiper-slide *ngFor="let src of photos">
+    <div class="slide-wrap">
+      <img [src]="src" alt="Lulu & Lele" />
+    </div>
+  </swiper-slide>
+</swiper-container>

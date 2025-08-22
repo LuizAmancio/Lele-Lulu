@@ -1,27 +1,42 @@
-# LoveSite
+# Lulu & Lele — One Page (Angular 15)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Este projeto é uma base pronta para um site *one page* romântico ❤️ com:
+- Carrossel de fotos (Swiper)
+- Título com nomes e um texto
+- Cronômetro responsivo (anos, meses, dias, horas, minutos, segundos) desde o início do namoro
 
-## Development server
+## Como usar (Angular 15)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1) **Crie um projeto Angular 15 vazio** (se quiser fixar a versão 15):
+```bash
+npx @angular/cli@15 new love-site --routing=false --style=css
+cd love-site
+```
 
-## Code scaffolding
+2) **Instale o Swiper (carrossel)**:
+```bash
+npm i swiper
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3) **Copie o conteúdo desta pasta `src`** para dentro do seu projeto, substituindo a `src` padrão.
 
-## Build
+4) **Rode o projeto**:
+```bash
+npm start
+# ou
+ng serve -o
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Coloque suas fotos
+Adicione suas fotos em `src/assets/photos/` e ajuste a lista no `carousel.component.ts` (propriedade `photos`).
 
-## Running unit tests
+### Ajuste a data do namoro
+Edite `counter.component.ts` e altere `startDate = new Date('2024-09-12T00:00:00')` para a data de vocês.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Estrutura
+- `app.component.html`: monta a One Page (carrossel, título/texto, contador).
+- `carousel.component.*`: carrossel com Swiper, responsivo e com paginação.
+- `counter.component.*`: contador preciso por calendário (anos/meses reais), atualiza a cada segundo.
+- `styles.css`: estilos globais (fonte, cores, responsividade).
